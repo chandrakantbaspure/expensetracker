@@ -71,8 +71,3 @@ export const getPieChartConfig = (labels, data) => ({
   }]
 });
 
-export const getChartGradients = (ctx) => ({
-  primary: ctx.createLinearGradient(0, 0, 0, 400),
-  success: ctx.createLinearGradient(0, 0, 0, 400),
-  info: ctx.createLinearGradient(0, 0, 0, 400)
-});

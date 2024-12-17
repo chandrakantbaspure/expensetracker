@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="app-layout">
     <Sidebar />
@@ -33,4 +32,3 @@ export default {
   min-height: 100vh;
 }
 </style>
-```

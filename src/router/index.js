@@ -71,7 +71,6 @@ router.beforeEach(async (to, from, next) => {
     return;
   }
 
-  // Handle guest only routes (login, register)
   if (to.meta.guestOnly && isAuthenticated) {
     next({ name: 'Dashboard' });
     return;

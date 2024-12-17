@@ -3,7 +3,6 @@
     <Sidebar/>
     <main class="main-content">
       <div class="container-fluid py-4">
-        <!-- Header Section -->
         <div class="d-flex justify-content-between align-items-center mb-4">
           <div>
             <h1 class="h3 mb-0">Dashboard</h1>
@@ -92,7 +91,6 @@
           </div>
         </div>
 
-        <!-- Recent Transactions -->
         <div class="card">
           <div class="card-body">
             <h5 class="card-title d-flex justify-content-between align-items-center">

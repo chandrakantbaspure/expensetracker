@@ -24,7 +24,3 @@ export const categoryColors = {
 export const getCategoryBadgeClass = (category) => {
   return categoryColors[category]?.bg || 'bg-secondary';
 };
-
-export const getCategoryColor = (category) => {
-  return categoryColors[category]?.color || '#6c757d';
-};

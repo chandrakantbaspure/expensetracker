@@ -21,13 +21,5 @@ export const storage = {
 
   remove(key) {
     localStorage.removeItem(PREFIX + key);
-  },
-
-  clear() {
-    Object.keys(localStorage)
-      .filter(key => key.startsWith(PREFIX))
-      .forEach(key => localStorage.removeItem(key));
   }
 };
-
-export const getStorageKey = (key) => PREFIX + key;

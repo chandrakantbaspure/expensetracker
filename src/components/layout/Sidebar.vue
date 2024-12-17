@@ -34,13 +34,10 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 
 export default {
   name: 'Sidebar',
-  computed: {
-    ...mapState('auth', ['currentUser'])
-  },
   methods: {
     ...mapActions('auth', ['logout']),
     async handleLogout() {

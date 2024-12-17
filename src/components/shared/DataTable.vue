@@ -1,6 +1,5 @@
 <template>
   <div class="data-table">
-    <!-- Table Header with Search and Filters -->
     <div class="table-header mb-3">
       <div class="row align-items-center">
         <div class="col">
