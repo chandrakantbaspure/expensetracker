@@ -1,0 +1,89 @@
+<template>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">
+        <i class="bi bi-wallet2 me-2"></i>
+        Expense Tracker
+      </span>
+
+      <div class="ms-auto d-flex align-items-center">
+        <div class="dropdown">
+          <button
+              class="btn btn-link text-white dropdown-toggle d-flex align-items-center"
+              type="button"
+              data-bs-toggle="dropdown"
+          >
+            <div class="avatar me-2">
+              {{ userInitials }}
+            </div>
+            <span>{{ userInitials }}</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#" @click.prevent="handleLogout">
+                <i class="bi bi-box-arrow-right me-2"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</template>
+
+<script>
+import {mapState, mapActions} from 'vuex';
+
+export default {
+  name: 'Navbar',
+  methods: {
+    ...mapActions('auth', ['logout']),
+    async handleLogout() {
+      await this.logout();
+      this.$router.push('/login');
+    }
+  },
+  data() {
+    return {
+      userInitials: ''
+    };
+  },
+  mounted() {
+    this.userInitials = localStorage.getItem('expense_tracker_user')
+  }
+};
+</script>
+
+<style scoped>
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.dropdown-toggle::after {
+  margin-left: 0.5rem;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+  padding: 0.5rem 0;
+  margin-top: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+</style>
